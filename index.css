@@ -106,6 +106,50 @@ body {
   color: var(--text-soft);
 }
 
+/* Hide the checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Hamburger Icon */
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  color: var(--text-light);
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .header-content {
+    padding: 15px 25px;
+  }
+
+  /* Hide nav links initially */
+  .main-nav ul {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: var(--bg-dark);
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    display: none;
+  }
+
+  /* Show nav when menu checked */
+  #menu-toggle:checked + .menu-icon + .main-nav ul {
+    display: flex;
+  }
+
+  /* Show hamburger icon */
+  .menu-icon {
+    display: block;
+  }
+}
+
 /* ==================================== */
 /* 2. HERO SECTION STYLING */
 /* ==================================== */
@@ -515,3 +559,4 @@ body {
     max-width: 300px;
   }
 }
+
